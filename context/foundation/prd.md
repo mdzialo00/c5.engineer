@@ -1,15 +1,18 @@
 ---
-project: "# TODO: project, see Open Questions"
+project: "c5-engineer"
 version: 1
 status: draft
-created: 2026-09-22
+created: 2026-09-25
 context_type: greenfield
-product_type: "# TODO: product_type, see Open Questions"
-target_scale: "# TODO: target_scale, see Open Questions"
+product_type: web-app
+target_scale:
+  users: small
+  qps: low
+  data_volume: small
 timeline_budget:
   mvp_weeks: 1
   hard_deadline: null
-  after_hours_only: null
+  after_hours_only: true
 ---
 
 # PRD
@@ -41,17 +44,41 @@ Technical reviewer a recruiter forwards the page to for a deeper technical read.
 
 ## User Stories
 
-# TODO: User Stories, see Open Questions
+### US-01: Recruiter reviews the CV and reaches GitHub, LinkedIn, or the CV download
+
+- **Given** a recruiter has received a link to the site (e.g. from a job application or a CV)
+- **When** they open the link
+- **Then** they see the candidate's name, title, contact info, and links to GitHub, LinkedIn, and Download CV, and when they click one of those links or buttons, they reach the destination (GitHub profile, LinkedIn profile) or download the CV as a PDF
 
 ## Functional Requirements
 
-# TODO: Functional Requirements, see Open Questions
+### CV content
+- FR-001: Recruiter can view name, title, location, and contact info. Priority: must-have
+  > Socrates: Counter-argument considered: "public email/phone invites scraping and spam; location adds no value in remote-first hiring." Resolution: kept as written.
+- FR-002: Recruiter can view professional summary. Priority: must-have
+  > Socrates: Counter-argument considered: "duplicates the CV PDF; recruiters skip summaries and scan for experience/skills first." Resolution: kept as written.
+- FR-003: Recruiter can view work experience. Priority: must-have
+  > Socrates: Counter-argument considered: "duplicates LinkedIn 1:1; a hardcoded section goes stale the moment the person changes roles." Resolution: kept as written.
+- FR-004: Recruiter can view skills. Priority: must-have
+  > Socrates: Counter-argument considered: "a flat list is as unverifiable as a resume bullet, and the site's own existence already proves the skills." Resolution: kept as written.
+- FR-005: Recruiter can view education. Priority: must-have
+  > Socrates: Counter-argument considered: "low signal for a working engineer; duplicates the CV PDF." Resolution: kept as written.
+- FR-006: Recruiter can view hobbies. Priority: nice-to-have
+  > Socrates: Counter-argument considered: "risks unconscious bias in screening and dilutes a proof-focused page." Resolution: kept as written.
+
+### External links and CV download
+- FR-007: Recruiter can click the GitHub link and reach the GitHub profile. Priority: must-have
+  > Socrates: Counter-argument considered: "a thin GitHub profile could undercut the proof-of-skill pitch instead of supporting it." Resolution: kept as written.
+- FR-008: Recruiter can click the LinkedIn link and reach the LinkedIn profile. Priority: must-have
+  > Socrates: Counter-argument considered: "an outbound link near the top could pull the recruiter off-site before they see the experience/skills sections." Resolution: kept as written.
+- FR-009: Recruiter can download the CV as a PDF file. Priority: must-have
+  > Socrates: Counter-argument considered: "offering a static PDF alongside the living page partly reverts to the artifact the site was meant to replace." Resolution: kept as written.
 
 ## Non-Functional Requirements
 
-# TODO: Non-Functional Requirements, see Open Questions
-
-(Shaping resolved that a no-index guardrail should exist as an NFR rather than a Success Criteria guardrail, but the measurable NFR itself was never drafted; see Open Questions.)
+- The site does not appear in search engine results for the candidate's name (no-index).
+- The site is fully usable on mobile-sized screens: all content readable, all links and buttons reachable, no horizontal scrolling.
+- A recruiter sees visible page content within 2 seconds of opening the link.
 
 ## Business Logic
 
@@ -63,17 +90,10 @@ Public, read-only site. No accounts, no login, no roles. Anyone with the link ca
 
 ## Non-Goals
 
-- The live style-switcher (three visual directions explored during shaping) is a design-exploration tool only; it does not ship. One style is chosen and shipped as the site's fixed look.
-
-# TODO: remaining Non-Goals, see Open Questions
+- No CMS or admin panel to edit content. Content is hardcoded; changes require editing code and redeploying.
+- No contact form. Contact is a direct mailto/tel link, no backend collecting submissions.
+- No live style-switcher in the shipped product. The prototype's three visual directions were a design-exploration tool only; one style ships as the fixed look (decided during earlier shaping).
 
 ## Open Questions
 
-1. **What is the project's name?**: TBD by user. Block: no (frontmatter needs a value before this PRD is review-ready).
-2. **What is the product type?**: TBD by user. Block: no.
-3. **What is the target scale (users, qps, data volume)?**: TBD by user. Block: no.
-4. **What are the User Stories (Given/When/Then) for this site?**: TBD by user, resume `/c5-shape` at phase 4+. Block: yes (PRD has no acceptance criteria until resolved).
-5. **What are the Functional Requirements (FR-NNN)?**: TBD by user, resume `/c5-shape` at phase 4. Block: yes.
-6. **What is the one-sentence business rule?**: TBD by user. Block: yes (PRD is hollow until resolved).
-7. **What is the no-index NFR's measurable target?**: Shaping decided this belongs in Non-Functional Requirements, not Success Criteria guardrails, but never drafted the actual NFR text. Owner: user.
-8. **What Non-Goals exist beyond the style-picker exclusion?**: TBD by user.
+1. **What is the one-sentence business rule?**: No domain rule exists; this is a static, read-only CV site by deliberate design choice, confirmed by the user during shaping. Owner: user (resolved). Block: no.
