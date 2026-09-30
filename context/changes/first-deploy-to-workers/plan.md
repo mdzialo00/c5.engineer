@@ -231,28 +231,28 @@ None. Nothing exists to migrate. The default page is public and indexable on wor
 
 #### Automated
 
-- [x] 1.1 Lint passes: `yarn lint`
-- [x] 1.2 Type check passes: `yarn tsc --noEmit`
-- [x] 1.3 Next build passes: `yarn build`
-- [x] 1.4 Adapter build produces `.open-next/worker.js`: `yarn opennextjs-cloudflare build`
+- [x] 1.1 Lint passes: `yarn lint` — 94f78cb
+- [x] 1.2 Type check passes: `yarn tsc --noEmit` — 94f78cb
+- [x] 1.3 Next build passes: `yarn build` — 94f78cb
+- [x] 1.4 Adapter build produces `.open-next/worker.js`: `yarn opennextjs-cloudflare build` — 94f78cb
 
 #### Manual
 
-- [x] 1.5 `yarn dev` still serves the default page at localhost:3000
-- [x] 1.6 `git status` shows no `.open-next` or `.wrangler` files
-- [x] 1.7 `tech-stack.md` says Yarn
+- [x] 1.5 `yarn dev` still serves the default page at localhost:3000 — 94f78cb
+- [x] 1.6 `git status` shows no `.open-next` or `.wrangler` files — 94f78cb
+- [x] 1.7 `tech-stack.md` says Yarn — 94f78cb
 
 ### Phase 2: Pre-push hook
 
 #### Automated
 
-- [ ] 2.1 Hook file exists and is executable
-- [ ] 2.2 Hooks path is set after install
+- [x] 2.1 Hook file exists and is executable
+- [x] 2.2 Hooks path is set after install
 
 #### Manual
 
-- [ ] 2.3 A lint error blocks the push, then is reverted
-- [ ] 2.4 A clean push passes the hook
+- [x] 2.3 A lint error blocks the push, then is reverted
+- [x] 2.4 A clean push passes the hook
 
 ### Phase 3: CI deploy and first release
 
