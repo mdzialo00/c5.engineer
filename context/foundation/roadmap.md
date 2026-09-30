@@ -3,7 +3,7 @@ project: c5-engineer
 version: 1
 status: draft
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-09-30
 prd_version: 1
 main_goal: speed
 top_blocker: time
@@ -29,7 +29,7 @@ Recruiters only see a PDF resume and a LinkedIn profile, and neither proves the 
 
 | ID   | Change ID                 | Outcome (user can …)                                                        | Prerequisites | PRD refs                                        | Status   |
 | ---- | ------------------------- | --------------------------------------------------------------------------- | ------------- | ----------------------------------------------- | -------- |
-| F-01 | first-deploy-to-workers   | (foundation) merged code auto-deploys to a public Cloudflare Workers URL    | —             | NFR (visible content within 2 seconds)          | ready    |
+| F-01 | first-deploy-to-workers   | (foundation) merged code auto-deploys to a public Cloudflare Workers URL    | —             | NFR (visible content within 2 seconds)          | done     |
 | S-01 | live-identity-and-links   | open the live link and see identity, contact, GitHub and LinkedIn links     | F-01          | US-01, FR-001, FR-007, FR-008                   | blocked  |
 | S-02 | cv-pdf-download           | download the CV as a PDF                                                    | S-01          | US-01, FR-009                                   | proposed |
 | S-03 | summary-and-experience    | read the professional summary and work experience                           | S-01          | FR-002, FR-003                                  | proposed |
@@ -63,7 +63,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Unknowns:**
   - Is there a Cloudflare account, and which URL or domain will the site use? Owner: user. Block: no.
 - **Risk:** The OpenNext adapter is not covered by the scaffold, so this is the step most likely to eat an evening. Doing it first, with only the default page at stake, keeps that cost away from real content.
-- **Status:** ready
+- **Status:** done
 
 ## Slices
 
@@ -146,3 +146,4 @@ Foundations below assume these are present and do NOT re-scaffold them.
 (Empty on first generation. `/c5-archive` appends an entry here, and flips that item's `Status` to `done`, when a change whose `Change ID` matches the item is archived. Do NOT pre-populate. Format:)
 
 - **<Slice ID>: <Outcome>**: Archived <YYYY-MM-DD> → `context/archive/<YYYY-MM-DD-change-id>/`. Lesson: <pointer to lessons.md if any, or `—`>.
+- **F-01: (foundation) a merge to the main branch builds and deploys the app to a public Workers URL through GitHub Actions, with the default page as the first payload.** — Archived 2026-09-30 → `context/archive/2026-09-29-first-deploy-to-workers/`. Lesson: —.
