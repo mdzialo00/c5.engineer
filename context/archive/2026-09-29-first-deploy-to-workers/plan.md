@@ -258,14 +258,14 @@ None. Nothing exists to migrate. The default page is public and indexable on wor
 
 #### Automated
 
-- [x] 3.1 Workflow file is valid YAML
-- [ ] 3.2 The push to `main` produces a green GitHub Actions run
-- [ ] 3.3 The smoke test step passes inside that run
-- [ ] 3.4 The workers.dev URL returns 200
+- [x] 3.1 Workflow file is valid YAML — 936b6f4
+- [x] 3.2 The push to `main` produces a green GitHub Actions run — f3b9435
+- [x] 3.3 The smoke test step passes inside that run — f3b9435
+- [x] 3.4 The workers.dev URL returns 200 — f3b9435
 
 #### Manual
 
-- [ ] 3.5 The default Next.js page opens in a browser at the workers.dev URL
-- [ ] 3.6 Visible content appears in under 2 seconds
-- [ ] 3.7 A second trivial push redeploys and the run is green
-- [ ] 3.8 A deliberately failed run shows red and sends a GitHub email, then is fixed
+- [x] 3.5 The default Next.js page opens in a browser at the workers.dev URL — f3b9435
+- [x] 3.6 Visible content appears in under 2 seconds — f3b9435
+- [x] 3.7 A second trivial push redeploys and the run is green — f3b9435
+- [x] 3.8 A deliberately failed run shows red and sends a GitHub email, then is fixed — f3b9435
