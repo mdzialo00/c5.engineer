@@ -246,19 +246,19 @@ None. Nothing exists to migrate. The default page is public and indexable on wor
 
 #### Automated
 
-- [x] 2.1 Hook file exists and is executable
-- [x] 2.2 Hooks path is set after install
+- [x] 2.1 Hook file exists and is executable — c4eb2d8
+- [x] 2.2 Hooks path is set after install — c4eb2d8
 
 #### Manual
 
-- [x] 2.3 A lint error blocks the push, then is reverted
-- [x] 2.4 A clean push passes the hook
+- [x] 2.3 A lint error blocks the push, then is reverted — c4eb2d8
+- [x] 2.4 A clean push passes the hook — c4eb2d8
 
 ### Phase 3: CI deploy and first release
 
 #### Automated
 
-- [ ] 3.1 Workflow file is valid YAML
+- [x] 3.1 Workflow file is valid YAML
 - [ ] 3.2 The push to `main` produces a green GitHub Actions run
 - [ ] 3.3 The smoke test step passes inside that run
 - [ ] 3.4 The workers.dev URL returns 200
