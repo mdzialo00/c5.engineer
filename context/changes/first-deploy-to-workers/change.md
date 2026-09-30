@@ -3,7 +3,7 @@ change_id: first-deploy-to-workers
 title: First deploy to Cloudflare Workers
 status: implementing
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-09-30
 archived_at: null
 ---
 
