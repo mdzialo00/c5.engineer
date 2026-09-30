@@ -34,4 +34,4 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: deploy
       - name: Smoke test
-        run: curl --fail --silent --show-error --retry 10 --retry-delay 6 --retry-all-errors"${{ steps.deploy.outputs.deployment-url }}"
+        run: curl --fail --silent --show-error --retry 10 --retry-delay 6 --retry-all-errors "${{ steps.deploy.outputs.deployment-url }}"
