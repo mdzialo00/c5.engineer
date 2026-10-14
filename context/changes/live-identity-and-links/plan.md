@@ -184,18 +184,18 @@ None. No data or prior content to migrate.
 
 #### Automated
 
-- [x] 1.1 Lint passes: `yarn lint`
-- [x] 1.2 Build passes: `yarn build`
-- [x] 1.3 Local HTML has the noindex tag
-- [x] 1.4 Local robots.txt disallows all
+- [x] 1.1 Lint passes: `yarn lint` — 3d37395
+- [x] 1.2 Build passes: `yarn build` — 3d37395
+- [x] 1.3 Local HTML has the noindex tag — 3d37395
+- [x] 1.4 Local robots.txt disallows all — 3d37395
 
 #### Manual
 
-- [x] 1.5 360px width has no horizontal scroll and all content is visible
-- [x] 1.6 GitHub and LinkedIn buttons open the correct profiles
-- [x] 1.7 Email and phone links work
-- [x] 1.8 Tab order and focus rings are correct
-- [x] 1.9 Page title is correct
+- [x] 1.5 360px width has no horizontal scroll and all content is visible — 3d37395
+- [x] 1.6 GitHub and LinkedIn buttons open the correct profiles — 3d37395
+- [x] 1.7 Email and phone links work — 3d37395
+- [x] 1.8 Tab order and focus rings are correct — 3d37395
+- [x] 1.9 Page title is correct — 3d37395
 
 ### Phase 2: CI assertion
 

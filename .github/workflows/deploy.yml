@@ -34,4 +34,15 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: deploy
       - name: Smoke test
-        run: curl --fail --silent --show-error --retry 10 --retry-delay 6 --retry-all-errors "${{ steps.deploy.outputs.deployment-url }}"
+        env:
+          DEPLOYMENT_URL: ${{ steps.deploy.outputs.deployment-url }}
+        run: |
+          curl --fail --silent --show-error --retry 10 --retry-delay 6 --retry-all-errors "$DEPLOYMENT_URL" -o page.html
+          status=0
+          for expected in 'name="robots" content="noindex' 'https://github.com/mdzialo00' 'https://www.linkedin.com/in/mdzialo/'; do
+            if ! grep -qF "$expected" page.html; then
+              echo "::error::Smoke test: page HTML is missing $expected"
+              status=1
+            fi
+          done
+          exit $status
