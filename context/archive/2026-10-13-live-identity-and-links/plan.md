@@ -201,10 +201,10 @@ None. No data or prior content to migrate.
 
 #### Automated
 
-- [ ] 2.1 Workflow lint and run start succeed
-- [ ] 2.2 Deploy run goes green on `main`
+- [x] 2.1 Workflow lint and run start succeed — ced2207
+- [x] 2.2 Deploy run goes green on `main` — ced2207
 
 #### Manual
 
-- [ ] 2.3 Live page and view-source show the noindex tag
-- [ ] 2.4 Live `/robots.txt` shows `Disallow: /`
+- [x] 2.3 Live page and view-source show the noindex tag — ced2207
+- [x] 2.4 Live `/robots.txt` shows `Disallow: /` — ced2207

@@ -3,7 +3,7 @@ project: c5-engineer
 version: 1
 status: draft
 created: 2026-09-29
-updated: 2026-09-30
+updated: 2026-10-14
 prd_version: 1
 main_goal: speed
 top_blocker: time
@@ -30,7 +30,7 @@ Recruiters only see a PDF resume and a LinkedIn profile, and neither proves the 
 | ID   | Change ID                 | Outcome (user can …)                                                        | Prerequisites | PRD refs                                        | Status   |
 | ---- | ------------------------- | --------------------------------------------------------------------------- | ------------- | ----------------------------------------------- | -------- |
 | F-01 | first-deploy-to-workers   | (foundation) merged code auto-deploys to a public Cloudflare Workers URL    | —             | NFR (visible content within 2 seconds)          | done     |
-| S-01 | live-identity-and-links   | open the live link and see identity, contact, GitHub and LinkedIn links     | F-01          | US-01, FR-001, FR-007, FR-008                   | planned  |
+| S-01 | live-identity-and-links   | open the live link and see identity, contact, GitHub and LinkedIn links     | F-01          | US-01, FR-001, FR-007, FR-008                   | done     |
 | S-02 | cv-pdf-download           | download the CV as a PDF                                                    | S-01          | US-01, FR-009                                   | proposed |
 | S-03 | summary-and-experience    | read the professional summary and work experience                           | S-01          | FR-002, FR-003                                  | proposed |
 | S-04 | skills-and-education      | scan skills and education                                                   | S-01          | FR-004, FR-005                                  | proposed |
@@ -78,7 +78,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Unknowns:**
   - Which visual style ships: Quiet, Editorial or Terminal? Owner: user. Block: yes.
 - **Risk:** The site goes public here, so the no-index rule has to ship in this slice, not later.
-- **Status:** blocked
+- **Status:** done
 
 ### S-02: CV PDF download
 
@@ -147,3 +147,4 @@ Foundations below assume these are present and do NOT re-scaffold them.
 
 - **<Slice ID>: <Outcome>**: Archived <YYYY-MM-DD> → `context/archive/<YYYY-MM-DD-change-id>/`. Lesson: <pointer to lessons.md if any, or `—`>.
 - **F-01: (foundation) a merge to the main branch builds and deploys the app to a public Workers URL through GitHub Actions, with the default page as the first payload.** — Archived 2026-09-30 → `context/archive/2026-09-29-first-deploy-to-workers/`. Lesson: —.
+- **S-01: user can open the live link and see the candidate's name, title, location and contact info, and can click GitHub and LinkedIn links that reach the profiles. The page is readable on a phone and asks search engines not to index it.** — Archived 2026-10-14 → `context/archive/2026-10-13-live-identity-and-links/`. Lesson: —.
