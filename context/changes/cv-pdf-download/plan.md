@@ -166,17 +166,17 @@ None. To update the CV later, replace the file in `public/` and redeploy. The UR
 
 #### Automated
 
-- [x] 1.1 Lint passes: `yarn lint`
-- [x] 1.2 Build passes: `yarn build`
-- [x] 1.3 Built assets contain the PDF and headers
-- [x] 1.4 Local HTML links the CV
+- [x] 1.1 Lint passes: `yarn lint` — ea2132a
+- [x] 1.2 Build passes: `yarn build` — ea2132a
+- [x] 1.3 Built assets contain the PDF and headers — ea2132a
+- [x] 1.4 Local HTML links the CV — ea2132a
 
 #### Manual
 
-- [x] 1.5 Three buttons wrap cleanly at 360px with no horizontal scroll
-- [x] 1.6 Download saves `Maciek Działo CV English.pdf` and it matches the final CV
-- [x] 1.7 Tab order and focus rings are correct
-- [x] 1.8 Phone download or viewer open works
+- [x] 1.5 Three buttons wrap cleanly at 360px with no horizontal scroll — ea2132a
+- [x] 1.6 Download saves `Maciek Działo CV English.pdf` and it matches the final CV — ea2132a
+- [x] 1.7 Tab order and focus rings are correct — ea2132a
+- [x] 1.8 Phone download or viewer open works — ea2132a
 
 ### Phase 2: CI check
 
