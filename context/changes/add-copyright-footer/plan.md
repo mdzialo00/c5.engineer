@@ -135,4 +135,4 @@ None. The route stays static, and the client component adds a few lines of JavaS
 - [x] 1.5 Footer sits at the bottom on short and long pages — cbb46e2
 - [x] 1.6 Style and column width match the page on mobile and desktop — cbb46e2
 - [x] 1.7 Year follows the current date without a rebuild — cbb46e2
-- [ ] 1.8 Deploy smoke test passes after push to `main`
+- [x] 1.8 Deploy smoke test passes after push to `main` — 274fa22
