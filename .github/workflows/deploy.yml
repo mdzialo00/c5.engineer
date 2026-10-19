@@ -41,12 +41,25 @@ jobs:
             status=0
             missing=""
             if curl --fail --silent --show-error "$DEPLOYMENT_URL" -o page.html; then
-              for expected in 'name="robots" content="noindex' 'https://github.com/mdzialo00' 'https://www.linkedin.com/in/mdzialo/'; do
+              for expected in 'name="robots" content="noindex' 'https://github.com/mdzialo00' 'https://www.linkedin.com/in/mdzialo/' 'href="/Maciek-Dzialo-CV-English.pdf"'; do
                 if ! grep -qF "$expected" page.html; then
                   missing="$missing [$expected]"
                   status=1
                 fi
               done
+              if curl --fail --silent --show-error -D headers.txt -o cv.pdf "$DEPLOYMENT_URL/Maciek-Dzialo-CV-English.pdf"; then
+                if ! grep -qi '^content-type: application/pdf' headers.txt; then
+                  missing="$missing [cv pdf content-type]"
+                  status=1
+                fi
+                if ! grep -qi '^x-robots-tag: noindex' headers.txt; then
+                  missing="$missing [cv pdf x-robots-tag]"
+                  status=1
+                fi
+              else
+                missing="$missing [cv pdf fetch failed]"
+                status=1
+              fi
             else
               missing=" [page fetch failed]"
               status=1
@@ -55,5 +68,5 @@ jobs:
             echo "Attempt $attempt: missing$missing"
             sleep 6
           done
-          echo "::error::Smoke test: page HTML is missing$missing"
+          echo "::error::Smoke test: missing$missing"
           exit 1
