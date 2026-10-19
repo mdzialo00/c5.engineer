@@ -182,9 +182,9 @@ None. To update the CV later, replace the file in `public/` and redeploy. The UR
 
 #### Automated
 
-- [ ] 2.1 Deploy run goes green on `main`
+- [x] 2.1 Deploy run goes green on `main` — 679027a
 
 #### Manual
 
-- [ ] 2.2 Live page shows the button and the live PDF URL returns the CV
-- [ ] 2.3 Live PDF response has `x-robots-tag: noindex, nofollow`
+- [x] 2.2 Live page shows the button and the live PDF URL returns the CV — 679027a
+- [x] 2.3 Live PDF response has `x-robots-tag: noindex, nofollow` — 679027a
