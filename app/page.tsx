@@ -129,6 +129,12 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <section className="mt-12">
+        <h2 className="mb-3 text-sm font-medium text-muted">Hobbies</h2>
+        <p className="text-[15px] leading-[1.6]">
+          {profile.hobbies.join(", ")}
+        </p>
+      </section>
     </main>
   );
 }
