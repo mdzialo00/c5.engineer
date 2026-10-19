@@ -166,8 +166,8 @@ None.
 
 #### Automated
 
-- [ ] 2.1 Deploy run goes green on `main` with the new strings
+- [x] 2.1 Deploy run goes green on `main` with the new strings — 7e43d83
 
 #### Manual
 
-- [ ] 2.2 Live URL shows the summary and both roles
+- [x] 2.2 Live URL shows the summary and both roles — 7e43d83
