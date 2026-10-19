@@ -33,7 +33,7 @@ Recruiters only see a PDF resume and a LinkedIn profile, and neither proves the 
 | S-01 | live-identity-and-links   | open the live link and see identity, contact, GitHub and LinkedIn links     | F-01          | US-01, FR-001, FR-007, FR-008                   | done     |
 | S-02 | cv-pdf-download           | download the CV as a PDF                                                    | S-01          | US-01, FR-009                                   | done |
 | S-03 | summary-and-experience    | read the professional summary and work experience                           | S-01          | FR-002, FR-003                                  | done     |
-| S-04 | skills-and-education      | scan skills and education                                                   | S-01          | FR-004, FR-005                                  | proposed |
+| S-04 | skills-and-education      | scan skills and education                                                   | S-01          | FR-004, FR-005                                  | done     |
 
 ## Baseline
 
@@ -115,7 +115,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Blockers:** —
 - **Unknowns:** —
 - **Risk:** Low. It reuses the layout from S-01 and S-03, so the risk is inconsistent styling, not new technology.
-- **Status:** proposed
+- **Status:** done
 
 ## Backlog Handoff
 
@@ -150,3 +150,4 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **S-01: user can open the live link and see the candidate's name, title, location and contact info, and can click GitHub and LinkedIn links that reach the profiles. The page is readable on a phone and asks search engines not to index it.** — Archived 2026-10-14 → `context/archive/2026-10-13-live-identity-and-links/`. Lesson: —.
 - **S-02: user can download the CV as a PDF from the page.** — Archived 2026-10-19 → `context/archive/2026-10-14-cv-pdf-download/`. Lesson: —.
 - **S-03: user can read the professional summary and work experience on the page.** — Archived 2026-10-19 → `context/archive/2026-10-19-summary-and-experience/`. Lesson: —.
+- **S-04: user can scan the skills list and education on the page.** — Archived 2026-10-19 → `context/archive/2026-10-19-skills-and-education/`. Lesson: —.
