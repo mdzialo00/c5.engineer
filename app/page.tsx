@@ -49,6 +49,25 @@ export default function Home() {
           </svg>
           LinkedIn
         </a>
+        <a
+          href={profile.cv}
+          download={profile.cvDownloadName}
+          className={linkClass}
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+            className="size-[18px] flex-none text-muted"
+          >
+            <path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 20h16" />
+          </svg>
+          Download CV
+        </a>
       </div>
     </main>
   );
