@@ -95,6 +95,40 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <section className="mt-12">
+        <h2 className="mb-6 text-sm font-medium text-muted">Skills</h2>
+        <dl className="flex flex-col gap-4">
+          {profile.skills.map((skill) => (
+            <div
+              key={skill.group}
+              className="sm:grid sm:grid-cols-[10rem_1fr] sm:gap-x-4"
+            >
+              <dt className="mb-1 text-sm text-muted sm:mt-[3px] sm:mb-0">
+                {skill.group}
+              </dt>
+              <dd className="text-[15px] leading-[1.6]">
+                {skill.items.join(", ")}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+      <section className="mt-12">
+        <h2 className="mb-6 text-sm font-medium text-muted">Education</h2>
+        <div className="flex flex-col gap-6">
+          {profile.education.map((entry) => (
+            <article key={entry.degree}>
+              <header className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                <h3 className="text-base font-semibold">{entry.degree}</h3>
+                <p className="text-sm whitespace-nowrap text-muted">
+                  {entry.period}
+                </p>
+              </header>
+              <p className="mt-0.5 text-[15px] text-muted">{entry.school}</p>
+            </article>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
