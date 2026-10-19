@@ -1,9 +1,10 @@
 ---
 change_id: hobbies
 title: Hobbies
-status: implementing
+status: archived
 created: 2026-10-19
 updated: 2026-10-20
+archived_at: 2026-10-19T22:06:56Z
 ---
 
 ## Notes

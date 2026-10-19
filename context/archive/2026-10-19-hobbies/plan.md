@@ -164,8 +164,8 @@ None. After archiving, the roadmap's Parked entry for FR-006 should move to Done
 
 #### Automated
 
-- [ ] 2.1 Deploy run goes green on `main` with the new string
+- [x] 2.1 Deploy run goes green on `main` with the new string — ae08732
 
 #### Manual
 
-- [ ] 2.2 Live URL shows the Hobbies section
+- [x] 2.2 Live URL shows the Hobbies section — ae08732
