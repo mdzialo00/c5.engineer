@@ -20,7 +20,7 @@ Every page load ends with the rights line in the page's muted style. The year fo
 | Decision | Choice | Why | Source |
 | --- | --- | --- | --- |
 | Code rights | Footer now, repo statement later | Keeps this change to one visible feature | Plan |
-| Year | Per-request via `connection()` | No redeploy needed after 1 January | Plan |
+| Year | Client component, build year as server snapshot | No redeploy after 1 January, route stays static. Per-request rendering and PPR were tried and dropped | Plan |
 | Smoke test | Add "All rights reserved" | Every other page element is already guarded | Plan |
 | Scope of notice | Page content only | Footer cannot cover code or the PDF | Frame |
 
@@ -32,20 +32,21 @@ Every page load ends with the rights line in the page's muted style. The year fo
 
 ## Architecture / Approach
 
-An async server component awaits `connection()` then reads the year. It is mounted once in the root layout. The home route changes from static to per-request rendering.
+A server component renders the line and hands the build-time year to a small client component, which shows the browser's current year after hydration. It is mounted once in the root layout. The route stays static.
 
 ## Phases at a Glance
 
 | Phase | What it delivers | Key risk |
 | --- | --- | --- |
-| 1. Footer, mount, smoke test | Visible footer with live year, guarded after deploy | Per-request rendering on Workers behaves differently from `next start` |
+| 1. Footer, mount, smoke test | Visible footer with live year, guarded after deploy | Year is the build year in static HTML and for no-JS visitors |
 
 **Prerequisites:** none.
 **Estimated effort:** one short session.
 
 ## Open Risks & Assumptions
 
-- Assumption: without `cacheComponents`, `connection()` makes the route dynamic. The build route table verifies it.
+- No-JS visitors and crawlers see the build year. Acceptable because the site is `noindex`.
+- Partial prerendering hung on the Workers runtime locally and `opennextjs-cloudflare` has open issues on it, so it was dropped.
 - The code stays without an explicit rights statement until the follow-up change.
 - Frame confidence was MEDIUM.
 
