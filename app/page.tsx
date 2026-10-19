@@ -69,6 +69,32 @@ export default function Home() {
           Download CV
         </a>
       </div>
+      <section className="mt-12">
+        <h2 className="mb-3 text-sm font-medium text-muted">Summary</h2>
+        <p className="text-base leading-[1.6]">{profile.summary}</p>
+      </section>
+      <section className="mt-12">
+        <h2 className="mb-6 text-sm font-medium text-muted">Work experience</h2>
+        <div className="flex flex-col gap-10">
+          {profile.experience.map((job) => (
+            <article key={job.company}>
+              <header className="mb-3 flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                <h3 className="text-base font-semibold">
+                  {job.role} / {job.company}
+                </h3>
+                <p className="text-sm whitespace-nowrap text-muted">
+                  {job.period}
+                </p>
+              </header>
+              <ul className="list-disc space-y-2 pl-5 text-[15px] leading-[1.6]">
+                {job.highlights.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
