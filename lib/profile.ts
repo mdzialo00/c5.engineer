@@ -126,4 +126,5 @@ export const profile = {
       period: "2016 - 2020",
     },
   ],
+  hobbies: ["Volleyball", "video games", "cars", "bootstrapped SaaS business"],
 } as const;
