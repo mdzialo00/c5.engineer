@@ -165,8 +165,8 @@ None.
 
 #### Automated
 
-- [ ] 2.1 Deploy run goes green on `main` with the new strings
+- [x] 2.1 Deploy run goes green on `main` with the new strings — 3d97147
 
 #### Manual
 
-- [ ] 2.2 Live URL shows both new sections
+- [x] 2.2 Live URL shows both new sections — 3d97147
