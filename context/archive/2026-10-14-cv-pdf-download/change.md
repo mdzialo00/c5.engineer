@@ -1,9 +1,10 @@
 ---
 change_id: cv-pdf-download
 title: CV PDF download
-status: implementing
+status: archived
 created: 2026-10-14
 updated: 2026-10-19
+archived_at: 2026-10-19T15:38:23Z
 ---
 
 ## Notes
