@@ -151,16 +151,16 @@ None.
 
 #### Automated
 
-- [x] 1.1 Lint passes: `yarn lint`
-- [x] 1.2 Build passes: `yarn build`
-- [x] 1.3 Local HTML contains the summary and both employers
+- [x] 1.1 Lint passes: `yarn lint` — 5ea545f
+- [x] 1.2 Build passes: `yarn build` — 5ea545f
+- [x] 1.3 Local HTML contains the summary and both employers — 5ea545f
 
 #### Manual
 
-- [x] 1.4 360px width has no horizontal scroll and all text is visible
-- [x] 1.5 All 7 Tesco and 6 Forte bullets appear and match the PDF
-- [x] 1.6 Header, buttons and links still work
-- [x] 1.7 Heading order and focus order are correct
+- [x] 1.4 360px width has no horizontal scroll and all text is visible — 5ea545f
+- [x] 1.5 All 7 Tesco and 6 Forte bullets appear and match the PDF — 5ea545f
+- [x] 1.6 Header, buttons and links still work — 5ea545f
+- [x] 1.7 Heading order and focus order are correct — 5ea545f
 
 ### Phase 2: CI check
 
