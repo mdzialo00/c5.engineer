@@ -32,7 +32,7 @@ Recruiters only see a PDF resume and a LinkedIn profile, and neither proves the 
 | F-01 | first-deploy-to-workers   | (foundation) merged code auto-deploys to a public Cloudflare Workers URL    | —             | NFR (visible content within 2 seconds)          | done     |
 | S-01 | live-identity-and-links   | open the live link and see identity, contact, GitHub and LinkedIn links     | F-01          | US-01, FR-001, FR-007, FR-008                   | done     |
 | S-02 | cv-pdf-download           | download the CV as a PDF                                                    | S-01          | US-01, FR-009                                   | done |
-| S-03 | summary-and-experience    | read the professional summary and work experience                           | S-01          | FR-002, FR-003                                  | proposed |
+| S-03 | summary-and-experience    | read the professional summary and work experience                           | S-01          | FR-002, FR-003                                  | done     |
 | S-04 | skills-and-education      | scan skills and education                                                   | S-01          | FR-004, FR-005                                  | proposed |
 
 ## Baseline

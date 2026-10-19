@@ -1,9 +1,10 @@
 ---
 change_id: summary-and-experience
 title: Summary and experience
-status: implemented
+status: archived
 created: 2026-10-19
 updated: 2026-10-19
+archived_at: 2026-10-19T21:02:53Z
 ---
 
 ## Notes
