@@ -7,6 +7,10 @@ updated: 2026-10-20
 
 > Plain-language log of user-facing changes, for non-technical readers. Newest entry first. Written by /c5-product-updates after /c5-archive. Distinct from CHANGELOG.md (/c5-release), which is a technical, commit-driven log for engineers.
 
+## The site now has a copyright footer — 2026-10-20
+
+At the bottom of the page, a centered line reads "© 2026 Maciek Działo. All rights reserved." The year follows the current date, so it needs no yearly edit.
+
 ## The site now shows hobbies — 2026-10-20
 
 At the bottom of the page, a new Hobbies section lists volleyball, video games, cars and a bootstrapped SaaS business. It fits a phone screen.
