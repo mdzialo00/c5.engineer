@@ -1,11 +1,15 @@
 ---
 artifact_url: https://claude.ai/artifact/7cPYc8phVUiiWZwrDWT4vG
-updated: 2026-10-19
+updated: 2026-10-20
 ---
 
 # Product Updates
 
 > Plain-language log of user-facing changes, for non-technical readers. Newest entry first. Written by /c5-product-updates after /c5-archive. Distinct from CHANGELOG.md (/c5-release), which is a technical, commit-driven log for engineers.
+
+## The site now shows hobbies — 2026-10-20
+
+At the bottom of the page, a new Hobbies section lists volleyball, video games, cars and a bootstrapped SaaS business. It fits a phone screen.
 
 ## The site now shows skills and education — 2026-10-19
 
