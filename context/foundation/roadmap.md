@@ -103,7 +103,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Blockers:** —
 - **Unknowns:** —
 - **Risk:** Experience is the longest content block, so mobile layout is most likely to break here.
-- **Status:** proposed
+- **Status:** done
 
 ### S-04: Skills and education
 
@@ -149,3 +149,4 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **F-01: (foundation) a merge to the main branch builds and deploys the app to a public Workers URL through GitHub Actions, with the default page as the first payload.** — Archived 2026-09-30 → `context/archive/2026-09-29-first-deploy-to-workers/`. Lesson: —.
 - **S-01: user can open the live link and see the candidate's name, title, location and contact info, and can click GitHub and LinkedIn links that reach the profiles. The page is readable on a phone and asks search engines not to index it.** — Archived 2026-10-14 → `context/archive/2026-10-13-live-identity-and-links/`. Lesson: —.
 - **S-02: user can download the CV as a PDF from the page.** — Archived 2026-10-19 → `context/archive/2026-10-14-cv-pdf-download/`. Lesson: —.
+- **S-03: user can read the professional summary and work experience on the page.** — Archived 2026-10-19 → `context/archive/2026-10-19-summary-and-experience/`. Lesson: —.
