@@ -41,7 +41,7 @@ jobs:
             status=0
             missing=""
             if curl --fail --silent --show-error "$DEPLOYMENT_URL" -o page.html; then
-              for expected in 'name="robots" content="noindex' 'https://github.com/mdzialo00' 'https://www.linkedin.com/in/mdzialo/' 'href="/Maciek-Dzialo-CV-English.pdf"' 'Tesco Technology' 'Forte Digital' 'Tanstack Query' 'ZSTIL High School'; do
+              for expected in 'name="robots" content="noindex' 'https://github.com/mdzialo00' 'https://www.linkedin.com/in/mdzialo/' 'href="/Maciek-Dzialo-CV-English.pdf"' 'Tesco Technology' 'Forte Digital' 'Tanstack Query' 'ZSTIL High School' 'bootstrapped SaaS business'; do
                 if ! grep -qF "$expected" page.html; then
                   missing="$missing [$expected]"
                   status=1
