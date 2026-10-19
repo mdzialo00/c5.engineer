@@ -7,6 +7,10 @@ updated: 2026-10-19
 
 > Plain-language log of user-facing changes, for non-technical readers. Newest entry first. Written by /c5-product-updates after /c5-archive. Distinct from CHANGELOG.md (/c5-release), which is a technical, commit-driven log for engineers.
 
+## The site now shows a summary and work experience — 2026-10-19
+
+Below the buttons, the page now has a short professional summary and a Work experience section. It lists Tesco Technology and Forte Digital with dates and every bullet from the CV, and it fits a phone screen.
+
 ## You can now download the CV — 2026-10-19
 
 The site has a new Download CV button next to the GitHub and LinkedIn ones. It saves the CV as a PDF named "Maciek Działo CV English.pdf". Search engines are asked not to list the file.
