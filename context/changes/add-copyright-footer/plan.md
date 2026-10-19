@@ -16,7 +16,8 @@ Every page load shows `© <current year> Maciek Działo. All rights reserved.` a
 
 - `<body>` is already `flex flex-col` with `min-h-full`, so a footer with `mt-auto` sits at the viewport bottom on short pages (`app/layout.tsx:15`).
 - `next.config.ts` has no `cacheComponents`, so `new Date()` in a server component is evaluated at build time and frozen until the next deploy.
-- Per-request year: `connection()` from `next/server` marks rendering as request-time and is the documented companion for `new Date()` (external, verified with user), source: `node_modules/next/dist/docs/01-app/03-api-reference/04-functions/connection.md`.
+- Per-request year via `connection()` was built first and worked, but made the whole route dynamic (`ƒ`). Partial prerendering (`cacheComponents: true`) kept the shell static but hung on the Workers runtime locally (500, "Worker's code had hung"), and `opennextjs-cloudflare` has about 15 mostly open issues on `cacheComponents` and PPR (#1450, #1318, #1369). Both were dropped (decided with user).
+- Chosen: a client component reads the year in the browser with `useSyncExternalStore`, with the build-time year as the server snapshot. The route stays static and the year updates after hydration with no redeploy.
 - The smoke test greps the live HTML for fixed strings (`.github/workflows/deploy.yml:34`). A footer string belongs in that list.
 - Name comes from `profile.name` in `lib/profile.ts`. Colors come from the `text-muted` token in `app/globals.css`.
 
@@ -30,11 +31,11 @@ Every page load shows `© <current year> Maciek Działo. All rights reserved.` a
 
 ## Implementation Approach
 
-A small server component renders the line. It awaits `connection()` before reading the year, so the year is computed per request. It lives in its own file and is mounted once in the root layout, after `{children}`. The route becomes server-rendered instead of static, which is fine for a single small `noindex` page.
+A server component renders the line and passes the build-time year to a small client component, `FooterYear`. The client component reads the current year with `useSyncExternalStore`, so the browser corrects the text after hydration with no redeploy and no hydration warning. The footer is mounted once in the root layout, after `{children}`, and the route stays static.
 
 ## Critical Implementation Details
 
-- **Timing & lifecycle**: `await connection()` must run before `new Date()`, or the year is baked in at build. Without `cacheComponents` a `<Suspense>` wrapper is not required. Add one only if `yarn build` reports a `blocking-prerender` error.
+- **Timing & lifecycle**: the server snapshot of `useSyncExternalStore` must return the build-time year passed as a prop, or React reports a hydration mismatch after 1 January. The static HTML and no-JS visitors show the build year.
 - **User experience spec**: the footer must not shift the page. Keep one line of text with bottom padding so the page end does not look cramped. `main` already has `pb-24`, so the footer needs only light padding.
 - **Debug & observability**: no new external call or failure mode. Existing coverage is the deploy smoke test, extended in this plan.
 
@@ -48,11 +49,11 @@ Render the footer on every page and guard it after deploy.
 
 #### 1. Footer component
 
-**File**: `app/footer.tsx` (new)
+**File**: `app/footer.tsx` (new), `app/footer-year.tsx` (new)
 
-**Intent**: Server component that renders the rights line with the current year, using the name from `profile`.
+**Intent**: A server component renders the rights line using the name from `profile`. A client component renders the year.
 
-**Contract**: default export `Footer`, an async function returning `<footer>`. Text is `© {year} {profile.name}. All rights reserved.` Container matches the page column (`mx-auto w-full max-w-[640px] px-6`) with `mt-auto`, `pb-10`, `text-sm text-muted`. Calls `await connection()` (from `next/server`) before `new Date().getFullYear()`.
+**Contract**: `Footer` is a sync default export returning `<footer>` with text `© <FooterYear buildYear={new Date().getFullYear()} /> {profile.name}. All rights reserved.` Container matches the page column (`mx-auto w-full max-w-[640px] px-6`) with `mt-auto`, `pb-10`, `text-center`, `text-sm text-muted`. `FooterYear` (`"use client"`) takes `buildYear: number` and returns the year from `useSyncExternalStore(() => () => {}, () => new Date().getFullYear(), () => buildYear)`.
 
 #### 2. Mount in layout
 
@@ -76,7 +77,7 @@ Render the footer on every page and guard it after deploy.
 
 - Linting passes: `yarn lint`
 - Build succeeds: `yarn build`
-- Build output shows the home route as dynamic, not static: `yarn build` route table
+- Build output still shows the home route as static (`○`): `yarn build` route table
 - Footer present in served HTML: `curl -s http://localhost:3000 | grep -F "All rights reserved"` against `yarn start`
 
 #### Manual Verification:
@@ -104,11 +105,11 @@ Render the footer on every page and guard it after deploy.
 
 1. Run `yarn dev` and check the footer on a short and a long viewport.
 2. Run `yarn build && yarn start` and curl the page for the footer string.
-3. Run `yarn preview` to confirm per-request rendering works on the Workers runtime.
+3. Run `yarn preview` to confirm the page renders on the Workers runtime.
 
 ## Performance Considerations
 
-The home route moves from prerendered to rendered per request on Workers. The page is small and `noindex`, so the cost is negligible. Check the build route table to confirm the change.
+None. The route stays static, and the client component adds a few lines of JavaScript.
 
 ## References
 
@@ -124,14 +125,14 @@ The home route moves from prerendered to rendered per request on Workers. The pa
 
 #### Automated
 
-- [x] 1.1 Linting passes: `yarn lint`
-- [x] 1.2 Build succeeds: `yarn build`
-- [x] 1.3 Build output shows the home route as dynamic
-- [x] 1.4 Footer present in served HTML via curl
+- [x] 1.1 Linting passes: `yarn lint` — cbb46e2
+- [x] 1.2 Build succeeds: `yarn build` — cbb46e2
+- [x] 1.3 Build output still shows the home route as static — cbb46e2
+- [x] 1.4 Footer present in served HTML via curl — cbb46e2
 
 #### Manual
 
-- [x] 1.5 Footer sits at the bottom on short and long pages
-- [x] 1.6 Style and column width match the page on mobile and desktop
-- [x] 1.7 Year follows the current date without a rebuild
+- [x] 1.5 Footer sits at the bottom on short and long pages — cbb46e2
+- [x] 1.6 Style and column width match the page on mobile and desktop — cbb46e2
+- [x] 1.7 Year follows the current date without a rebuild — cbb46e2
 - [ ] 1.8 Deploy smoke test passes after push to `main`
