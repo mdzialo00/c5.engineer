@@ -149,16 +149,16 @@ None. After archiving, the roadmap's Parked entry for FR-006 should move to Done
 
 #### Automated
 
-- [x] 1.1 Lint passes: `yarn lint`
-- [x] 1.2 Build passes: `yarn build`
-- [x] 1.3 Local HTML contains the section
+- [x] 1.1 Lint passes: `yarn lint` — 0efc3e5
+- [x] 1.2 Build passes: `yarn build` — 0efc3e5
+- [x] 1.3 Local HTML contains the section — 0efc3e5
 
 #### Manual
 
-- [x] 1.4 360px width has no horizontal scroll and the line wraps inside the column
-- [x] 1.5 Hobbies is last and matches the PDF wording, with "SaaS" capitalized
-- [x] 1.6 Existing sections are unchanged
-- [x] 1.7 Heading order and focus order are correct
+- [x] 1.4 360px width has no horizontal scroll and the line wraps inside the column — 0efc3e5
+- [x] 1.5 Hobbies is last and matches the PDF wording, with "SaaS" capitalized — 0efc3e5
+- [x] 1.6 Existing sections are unchanged — 0efc3e5
+- [x] 1.7 Heading order and focus order are correct — 0efc3e5
 
 ### Phase 2: CI check
 
