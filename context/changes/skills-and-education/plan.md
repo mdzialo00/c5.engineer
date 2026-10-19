@@ -150,16 +150,16 @@ None.
 
 #### Automated
 
-- [x] 1.1 Lint passes: `yarn lint`
-- [x] 1.2 Build passes: `yarn build`
-- [x] 1.3 Local HTML contains both sections
+- [x] 1.1 Lint passes: `yarn lint` — d4280cb
+- [x] 1.2 Build passes: `yarn build` — d4280cb
+- [x] 1.3 Local HTML contains both sections — d4280cb
 
 #### Manual
 
-- [x] 1.4 360px width has no horizontal scroll and all text is visible
-- [x] 1.5 All six skill groups and both education entries match the PDF
-- [x] 1.6 Header, buttons, summary and experience are unchanged
-- [x] 1.7 Heading order and focus order are correct
+- [x] 1.4 360px width has no horizontal scroll and all text is visible — d4280cb
+- [x] 1.5 All six skill groups and both education entries match the PDF — d4280cb
+- [x] 1.6 Header, buttons, summary and experience are unchanged — d4280cb
+- [x] 1.7 Heading order and focus order are correct — d4280cb
 
 ### Phase 2: CI check
 
