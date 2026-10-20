@@ -1,7 +1,7 @@
 ---
 change_id: move-profile-data-to-json
 title: Move profile data from profile.ts to a JSON file
-status: implementing
+status: implemented
 created: 2026-10-21
 updated: 2026-10-21
 archived_at: null
