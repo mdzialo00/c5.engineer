@@ -146,14 +146,14 @@ None. The data has no runtime consumers outside the two imports.
 
 #### Automated
 
-- [x] 1.1 Baseline homepage HTML is saved before any edit
-- [x] 1.2 Linting passes: `yarn lint`
-- [x] 1.3 Build passes: `yarn build`
-- [x] 1.4 Prerendered homepage HTML after the change is identical to the baseline
-- [x] 1.5 No remaining imports of `@c5-engineer/lib/profile` without the `.json` extension
+- [x] 1.1 Baseline homepage HTML is saved before any edit — 3774d96
+- [x] 1.2 Linting passes: `yarn lint` — 3774d96
+- [x] 1.3 Build passes: `yarn build` — 3774d96
+- [x] 1.4 Prerendered homepage HTML after the change is identical to the baseline — 3774d96
+- [x] 1.5 No remaining imports of `@c5-engineer/lib/profile` without the `.json` extension — 3774d96
 
 #### Manual
 
-- [x] 1.6 `yarn dev` shows every homepage section with the old content
-- [x] 1.7 Polish characters in the name, location and school render correctly
-- [x] 1.8 The Download CV link still downloads `Maciek Działo CV English.pdf`
+- [x] 1.6 `yarn dev` shows every homepage section with the old content — 3774d96
+- [x] 1.7 Polish characters in the name, location and school render correctly — 3774d96
+- [x] 1.8 The Download CV link still downloads `Maciek Działo CV English.pdf` — 3774d96
