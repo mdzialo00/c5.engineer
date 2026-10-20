@@ -1,4 +1,4 @@
-import { profile } from "@c5-engineer/lib/profile";
+import profile from "@c5-engineer/lib/profile.json";
 import FooterYear from "./footer-year";
 
 export default function Footer() {

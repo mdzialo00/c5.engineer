@@ -1,4 +1,4 @@
-import { profile } from "@c5-engineer/lib/profile";
+import profile from "@c5-engineer/lib/profile.json";
 
 const linkClass =
   "inline-flex min-h-11 touch-manipulation items-center gap-2 rounded-lg border border-border px-3.5 text-sm font-medium text-foreground transition-[border-color,background-color,transform] duration-150 ease-out active:scale-[0.96] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black [@media(hover:hover)_and_(pointer:fine)]:hover:border-border-strong [@media(hover:hover)_and_(pointer:fine)]:hover:bg-surface";
