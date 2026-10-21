@@ -200,26 +200,26 @@ The repo has no test runner, so verification is the build, the existing smoke te
 
 #### Automated
 
-- [x] 2.1 Lint passes: `yarn lint`
-- [x] 2.2 Type check passes: `yarn tsc --noEmit`
-- [x] 2.3 Build passes: `yarn build`
-- [x] 2.4 Built HTML still contains every string in the smoke test list
+- [x] 2.1 Lint passes: `yarn lint` — 689a5e7
+- [x] 2.2 Type check passes: `yarn tsc --noEmit` — 689a5e7
+- [x] 2.3 Build passes: `yarn build` — 689a5e7
+- [x] 2.4 Built HTML still contains every string in the smoke test list — 689a5e7
 
 #### Manual
 
-- [ ] 2.5 Buttons look and behave exactly as before, including the CV download name
-- [ ] 2.6 Each click shows its event in PostHog Live events with the right `href`
-- [ ] 2.7 GitHub and LinkedIn events arrive even though the tab navigates away
+- [x] 2.5 Buttons look and behave exactly as before, including the CV download name
+- [x] 2.6 Each click shows its event in PostHog Live events with the right `href`
+- [x] 2.7 GitHub and LinkedIn events arrive even though the tab navigates away
 
 ### Phase 3: Verify in production
 
 #### Automated
 
-- [ ] 3.1 Deploy workflow passes, including the smoke test
+- [x] 3.1 Deploy workflow passes, including the smoke test
 
 #### Manual
 
-- [ ] 3.2 Pageview and all three click events show in PostHog Live events from the deployed URL
-- [ ] 3.3 No PostHog cookie or storage key on the live site
-- [ ] 3.4 Load the deployed page: a pageview shows in PostHog Live events (moved from 1.5, no local env file)
-- [ ] 3.5 DevTools Application tab shows no PostHog cookie and no PostHog localStorage key (moved from 1.6)
+- [x] 3.2 Pageview and all three click events show in PostHog Live events from the deployed URL
+- [x] 3.3 No PostHog cookie or storage key on the live site
+- [x] 3.4 Load the deployed page: a pageview shows in PostHog Live events (moved from 1.5, no local env file)
+- [x] 3.5 DevTools Application tab shows no PostHog cookie and no PostHog localStorage key (moved from 1.6)

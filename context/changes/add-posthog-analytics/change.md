@@ -1,7 +1,7 @@
 ---
 change_id: add-posthog-analytics
 title: Add PostHog analytics with click tracking on CV and social links
-status: implementing
+status: implemented
 created: 2026-10-21
 updated: 2026-10-22
 archived_at: null
