@@ -27,6 +27,8 @@ jobs:
       - run: yarn install --immutable
       - run: yarn lint
       - run: yarn opennextjs-cloudflare build
+        env:
+          NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN: ${{ vars.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN }}
       - id: deploy
         uses: cloudflare/wrangler-action@v4
         with:
