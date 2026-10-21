@@ -188,22 +188,22 @@ The repo has no test runner, so verification is the build, the existing smoke te
 
 #### Automated
 
-- [x] 1.1 Lint passes: `yarn lint`
-- [x] 1.2 Type check passes: `yarn tsc --noEmit`
-- [x] 1.3 Build passes: `yarn build`
+- [x] 1.1 Lint passes: `yarn lint` — c0d45b5
+- [x] 1.2 Type check passes: `yarn tsc --noEmit` — c0d45b5
+- [x] 1.3 Build passes: `yarn build` — c0d45b5
 
 #### Manual
 
-- [x] 1.4 Cookieless mode is enabled in PostHog project settings
+- [x] 1.4 Cookieless mode is enabled in PostHog project settings — c0d45b5
 
 ### Phase 2: Track the three buttons
 
 #### Automated
 
-- [ ] 2.1 Lint passes: `yarn lint`
-- [ ] 2.2 Type check passes: `yarn tsc --noEmit`
-- [ ] 2.3 Build passes: `yarn build`
-- [ ] 2.4 Built HTML still contains every string in the smoke test list
+- [x] 2.1 Lint passes: `yarn lint`
+- [x] 2.2 Type check passes: `yarn tsc --noEmit`
+- [x] 2.3 Build passes: `yarn build`
+- [x] 2.4 Built HTML still contains every string in the smoke test list
 
 #### Manual
 
