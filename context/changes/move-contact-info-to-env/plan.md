@@ -260,9 +260,9 @@ Existing deployments keep working until the next push. After Phase 1 lands on `m
 #### Manual
 
 - [x] 2.3 GitHub secrets set and listed before pushing — 34d936f
-- [x] 2.6 Worker secrets uploaded by the deploy step (`secrets:` input)
-- [ ] 2.4 Deploy run is green including smoke test
-- [ ] 2.5 Live page shows email and phone
+- [x] 2.6 Worker secrets uploaded by the deploy step (`secrets:` input) — d70f651
+- [x] 2.4 Deploy run is green including smoke test — d70f651
+- [x] 2.5 Live page shows email and phone — d70f651
 
 ### Phase 3: Scrub the tree
 
