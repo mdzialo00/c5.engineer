@@ -233,27 +233,27 @@ Existing deployments keep working until the next push. After Phase 1 lands on `m
 
 #### Automated
 
-- [x] 1.1 Lint passes
-- [x] 1.2 Build passes with env set
-- [x] 1.3 Build fails without env and names the variable
-- [x] 1.4 No tracked source file contains the values
+- [x] 1.1 Lint passes — f7813b0
+- [x] 1.2 Build passes with env set — f7813b0
+- [x] 1.3 Build fails without env and names the variable — f7813b0
+- [x] 1.4 No tracked source file contains the values — f7813b0
 
 #### Manual
 
-- [x] 1.5 `.env.local` created and `yarn dev` shows both values
-- [x] 1.6 `tel:` link still dials the stripped number
-- [x] 1.7 `.env.example` trackable, `.env.local` ignored
+- [x] 1.5 `.env.local` created and `yarn dev` shows both values — f7813b0
+- [x] 1.6 `tel:` link still dials the stripped number — f7813b0
+- [x] 1.7 `.env.example` trackable, `.env.local` ignored — f7813b0
 
 ### Phase 2: Wire up CI
 
 #### Automated
 
-- [ ] 2.1 Lint passes
-- [ ] 2.2 Workflow YAML is accepted
+- [x] 2.1 Lint passes
+- [x] 2.2 Workflow YAML is accepted
 
 #### Manual
 
-- [ ] 2.3 GitHub secrets set and listed before pushing
+- [x] 2.3 GitHub secrets set and listed before pushing
 - [ ] 2.4 Deploy run is green including smoke test
 - [ ] 2.5 Live page shows email and phone
 

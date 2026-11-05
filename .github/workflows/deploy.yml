@@ -29,6 +29,8 @@ jobs:
       - run: yarn opennextjs-cloudflare build
         env:
           NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN: ${{ vars.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN }}
+          CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
+          CONTACT_PHONE: ${{ secrets.CONTACT_PHONE }}
       - id: deploy
         uses: cloudflare/wrangler-action@v4
         with:
@@ -38,12 +40,14 @@ jobs:
       - name: Smoke test
         env:
           DEPLOYMENT_URL: ${{ steps.deploy.outputs.deployment-url }}
+          CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
+          CONTACT_PHONE: ${{ secrets.CONTACT_PHONE }}
         run: |
           for attempt in 1 2 3 4 5 6 7 8 9 10; do
             status=0
             missing=""
             if curl --fail --silent --show-error "$DEPLOYMENT_URL" -o page.html; then
-              for expected in 'name="robots" content="noindex' 'https://github.com/mdzialo00' 'https://www.linkedin.com/in/mdzialo/' 'href="/Maciek-Dzialo-CV-English.pdf"' 'Tesco Technology' 'Forte Digital' 'Tanstack Query' 'ZSTIL High School' 'bootstrapped SaaS business' 'All rights reserved'; do
+              for expected in 'name="robots" content="noindex' 'https://github.com/mdzialo00' 'https://www.linkedin.com/in/mdzialo/' 'href="/Maciek-Dzialo-CV-English.pdf"' 'Tesco Technology' 'Forte Digital' 'Tanstack Query' 'ZSTIL High School' 'bootstrapped SaaS business' 'All rights reserved' "$CONTACT_EMAIL" "$CONTACT_PHONE"; do
                 if ! grep -qF "$expected" page.html; then
                   missing="$missing [$expected]"
                   status=1
