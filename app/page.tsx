@@ -1,10 +1,11 @@
 import { TrackedLink } from "@c5-engineer/app/tracked-link";
+import { contact } from "@c5-engineer/lib/contact";
 import profile from "@c5-engineer/lib/profile.json";
 
 const linkClass =
   "inline-flex min-h-11 touch-manipulation items-center gap-2 rounded-lg border border-border px-3.5 text-sm font-medium text-foreground transition-[border-color,background-color,transform] duration-150 ease-out active:scale-[0.96] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black [@media(hover:hover)_and_(pointer:fine)]:hover:border-border-strong [@media(hover:hover)_and_(pointer:fine)]:hover:bg-surface";
 
-const phoneHref = `tel:${profile.phone.replace(/[\s-]/g, "")}`;
+const phoneHref = `tel:${contact.phone.replace(/[\s-]/g, "")}`;
 
 export default function Home() {
   return (
@@ -17,14 +18,14 @@ export default function Home() {
         <span>{profile.location}</span>
         <span aria-hidden="true">·</span>
         <a
-          href={`mailto:${profile.email}`}
+          href={`mailto:${contact.email}`}
           className="underline-offset-2 hover:underline"
         >
-          {profile.email}
+          {contact.email}
         </a>
         <span aria-hidden="true">·</span>
         <a href={phoneHref} className="underline-offset-2 hover:underline">
-          {profile.phone}
+          {contact.phone}
         </a>
       </p>
       <div className="flex flex-wrap gap-2">
