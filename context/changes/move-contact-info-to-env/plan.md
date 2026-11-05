@@ -282,6 +282,6 @@ Existing deployments keep working until the next push. After Phase 1 lands on `m
 
 #### Manual
 
-- [ ] 4.2 Runbook run to the end by the user
+- [x] 4.2 Runbook run to the end by the user
 - [ ] 4.3 GitHub code search returns nothing for this repo
-- [ ] 4.4 Fresh clone has no match in `git log -p -S`
+- [x] 4.4 Fresh clone has no match in `git log -p -S`

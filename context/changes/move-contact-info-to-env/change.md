@@ -1,9 +1,9 @@
 ---
 change_id: move-contact-info-to-env
 title: Move contact info from source code to env variables
-status: implementing
+status: implemented
 created: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-06
 archived_at: null
 ---
 
