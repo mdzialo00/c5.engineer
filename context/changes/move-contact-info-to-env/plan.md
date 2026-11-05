@@ -26,13 +26,13 @@ This plan never writes the real values. Wherever it needs them, it uses `<email>
 ### Key Discoveries:
 
 - Next.js loads `.env.local` into `process.env` and only inlines `NEXT_PUBLIC_` vars into client JS (`node_modules/next/dist/docs/01-app/02-guides/environment-variables.md`). The contact info is rendered by a server component, so plain `CONTACT_EMAIL` and `CONTACT_PHONE` work and nothing extra reaches client bundles.
-- The deploy builds in CI, so Cloudflare needs no runtime secrets. The values are baked in at build time.
+- Both the build and the Worker need the values. Correction after the first deploy returned 500: the Worker still loads `lib/contact.ts` at runtime, and `wrangler tail` showed `CONTACT_EMAIL is not set`. The GitHub secrets only reach the build step, so the deploy step also uploads them as Worker secrets via `wrangler-action`'s `secrets:` input.
 - Pushing to `main` triggers the deploy (`deploy.yml:3-5`). A push without the GitHub secrets set fails the build by design.
 
 ## What We're NOT Doing
 
 - Moving the CV PDF out of git or regenerating it. It stays as the site's download.
-- Using `NEXT_PUBLIC_` names or Cloudflare runtime secrets.
+- Using `NEXT_PUBLIC_` names, or putting the values in `wrangler.jsonc` `vars` (that would put them back in the repo).
 - Running the history rewrite for the user. The plan only writes the runbook.
 - Hiding the values on the live site. They stay visible there.
 
@@ -111,6 +111,12 @@ Give the deploy workflow the secrets and make the smoke test prove they rendered
 **File**: `.github/workflows/deploy.yml`
 
 **Intent**: Add `CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}` and `CONTACT_PHONE: ${{ secrets.CONTACT_PHONE }}` to the `env:` of the `opennextjs-cloudflare build` step, next to the PostHog token.
+
+#### 1b. Worker secrets (added after the first deploy failed)
+
+**File**: `.github/workflows/deploy.yml`
+
+**Intent**: On the `cloudflare/wrangler-action` step, add `secrets: |` listing `CONTACT_EMAIL` and `CONTACT_PHONE`, and give the step the same two values in `env:`. The action uploads them to the Worker before deploying, so `process.env` has them at runtime.
 
 #### 2. Smoke test
 
@@ -248,12 +254,13 @@ Existing deployments keep working until the next push. After Phase 1 lands on `m
 
 #### Automated
 
-- [x] 2.1 Lint passes
-- [x] 2.2 Workflow YAML is accepted
+- [x] 2.1 Lint passes — 34d936f
+- [x] 2.2 Workflow YAML is accepted — 34d936f
 
 #### Manual
 
-- [x] 2.3 GitHub secrets set and listed before pushing
+- [x] 2.3 GitHub secrets set and listed before pushing — 34d936f
+- [x] 2.6 Worker secrets uploaded by the deploy step (`secrets:` input)
 - [ ] 2.4 Deploy run is green including smoke test
 - [ ] 2.5 Live page shows email and phone
 

@@ -37,6 +37,12 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: deploy
+          secrets: |
+            CONTACT_EMAIL
+            CONTACT_PHONE
+        env:
+          CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
+          CONTACT_PHONE: ${{ secrets.CONTACT_PHONE }}
       - name: Smoke test
         env:
           DEPLOYMENT_URL: ${{ steps.deploy.outputs.deployment-url }}
