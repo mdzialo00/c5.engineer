@@ -13,5 +13,11 @@
       "binding": "WORKER_SELF_REFERENCE",
       "service": "c5-engineer"
     }
-  ]
+  ],
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true
+    }
+  }
 }
