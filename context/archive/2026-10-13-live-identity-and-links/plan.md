@@ -52,7 +52,7 @@ Port the Quiet header into Next, add real links, and ship no-index.
 
 **Intent**: One exported constant holding the identity and contact data, so markup has no hardcoded strings.
 
-**Contract**: `profile` has `name` ("Maciek Działo"), `title` ("Software Engineer"), `location` ("Kraków, Poland"), `email` ("redacted@example.com"), `phone` ("+00 000-000-000"), `github` ("https://github.com/mdzialo00") and `linkedin` ("https://www.linkedin.com/in/mdzialo/"). Typed with `as const`. Import it through `@c5-engineer/lib/profile`.
+**Contract**: `profile` has `name` ("Maciek Działo"), `title` ("Software Engineer"), `location` ("Kraków, Poland"), `email` ("<email>"), `phone` ("<phone>"), `github` ("https://github.com/mdzialo00") and `linkedin` ("https://www.linkedin.com/in/mdzialo/"). Typed with `as const`. Import it through `@c5-engineer/lib/profile`.
 
 #### 2. Page
 
