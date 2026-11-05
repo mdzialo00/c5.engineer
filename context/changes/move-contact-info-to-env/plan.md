@@ -268,17 +268,17 @@ Existing deployments keep working until the next push. After Phase 1 lands on `m
 
 #### Automated
 
-- [x] 3.1 Only the CV PDF still matches the values
+- [x] 3.1 Only the CV PDF still matches the values — 78823e7
 
 #### Manual
 
-- [x] 3.2 Diff skimmed, no other doc quotes the values
+- [x] 3.2 Diff skimmed, no other doc quotes the values — 78823e7
 
 ### Phase 4: History runbook
 
 #### Automated
 
-- [ ] 4.1 Runbook exists and contains no real values
+- [x] 4.1 Runbook exists and contains no real values
 
 #### Manual
 
